@@ -1,0 +1,29 @@
+﻿@model List<WebSite.ViewModels.FaturaViewModel>
+
+@{
+    ViewData["Title"] = "Faturas - ";
+}
+
+<h1>
+    @ViewData["Title"]
+    <a class="btn btn-primary" asp-action="ProcessarFaturas">Processar Faturas</a>
+</h1>
+<br />
+
+<partial name="_ListarFaturas" />
+
+@section Scripts {
+
+    <script>
+        $('#tbFaturas').DataTable({
+            "pageLength": 5,
+            "info": false,
+            "searching": false,
+            "dom": 'Bfrtip',
+            "buttons": [
+                { extend: 'csv', text: "Exportar CSV", className: 'btn btn-outline-success espaco-bottom' }
+            ]
+        });
+
+    </script>
+}

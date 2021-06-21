@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebSite.ViewModels.FaturaViewModel>
+
+<table id="tbFaturas" class="table">
+  
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>CEP</th>
+            <th>Rua</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Valor</th>
+            <th>Páginas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NomeCliente</td>
+                <td>@item.CEP</td>
+                <td>@item.RuaComComplemento</td>
+                <td>@item.Bairro</td>
+                <td>@item.Cidade</td>
+                <td>@item.Estado</td>
+                <td>@item.ValorFatura</td>
+                <td>@item.NumeroPaginas</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
